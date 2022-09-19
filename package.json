@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tippyjs/react": "^4.2.6",
     "next": "12.3.0",
     "nextjs-progressbar": "^0.0.14",
     "phosphor-react": "^1.4.1",

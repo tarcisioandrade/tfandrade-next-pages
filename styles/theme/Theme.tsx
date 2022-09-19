@@ -22,6 +22,9 @@ const theme = {
   // BorderRadius
   borderRadiusXS: "8px",
   borderRadius: "4px",
+
+  // LineHeith
+  lineHeigth: "1.6"
 };
 
 export default theme;

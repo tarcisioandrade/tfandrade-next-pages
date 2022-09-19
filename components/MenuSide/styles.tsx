@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const FixedSide = styled.div`
   position: fixed;
   z-index: 100;
+
+  @media screen and (max-width:768px) {
+    display: none;
+  }
 `;
 
 export const SideNav = styled.nav`
