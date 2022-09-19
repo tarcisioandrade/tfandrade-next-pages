@@ -50,7 +50,7 @@ const Home: NextPage = () => {
         estudando em um ambiente profissional.
       </Styles.Intro>
       <ButtonLink href="" target="_blank">
-        Download CV <DownloadSimple size={17} color="#FBFCFF" weight="bold" />
+        Download CV <DownloadSimple size={16} color="currentColor" weight="bold" />
       </ButtonLink>
 
       <Styles.TitleTec>Tecnologias e Conhecimentos</Styles.TitleTec>

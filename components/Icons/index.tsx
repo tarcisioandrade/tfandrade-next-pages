@@ -161,3 +161,23 @@ export function TypescriptIcon({
     </svg>
   );
 }
+
+export function LinkOut({ color = "#FBFCFF" }: { color?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M13.5 10.5L21 3m-5 0h5v5m0 6v5a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h5"
+      ></path>
+    </svg>
+  );
+}

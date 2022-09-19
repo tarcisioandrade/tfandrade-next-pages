@@ -78,7 +78,7 @@ export const TitleTec = styled.div`
   margin: 50px 0;
 
   @media screen and (max-width: 425px) {
-    font-size: ${({ theme }) => theme.MfontLs};
+    font-size: ${({ theme }) => theme.MfontXs};
     text-align: center;
   }
 `;

@@ -4,7 +4,7 @@ export const Button = styled.button`
   background-color: ${({ theme }) => theme.green};
   color: ${({ theme }) => theme.whitePrimary};
   padding: 16px 23px;
-  border-radius: ${({ theme }) => theme.borderRadiusXS};
+  border-radius: ${({ theme }) => theme.borderRadius};
   font-size: ${({ theme }) => theme.MfontLs};
   border: none;
   cursor: pointer;
@@ -16,6 +16,7 @@ export const Button = styled.button`
 
   svg {
     margin-left: 8px;
+    vertical-align: middle;
   }
 `;
 
@@ -25,7 +26,7 @@ export const ButtonLink = styled.a`
   background-color: ${({ theme }) => theme.green};
   color: ${({ theme }) => theme.whitePrimary};
   padding: 16px 23px;
-  border-radius: ${({ theme }) => theme.borderRadiusXS};
+  border-radius: ${({ theme }) => theme.borderRadius};
   font-size: ${({ theme }) => theme.MfontLs};
   border: none;
   cursor: pointer;

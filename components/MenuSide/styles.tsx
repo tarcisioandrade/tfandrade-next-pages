@@ -42,6 +42,6 @@ export const SideIcons = styled.div`
     color: ${({ theme }) => theme.whitePrimary};
     text-decoration: none;
     font-size: ${({ theme }) => theme.DfontSm};
-    font-weight: 200;
+    font-weight: 400;
   }
 `;

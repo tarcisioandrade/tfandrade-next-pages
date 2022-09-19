@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.whitePrimary} ;
     background: ${({ theme }) =>
       theme.blackBlue} url("assets/bg-image.png") bottom center no-repeat ;
+      background-size: cover;
     font-family: 'Inter', sans-serif;
   }
 

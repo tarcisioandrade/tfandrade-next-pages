@@ -17,7 +17,6 @@ export const BlurContainer = styled.div<Props>`
   height: 100vh;
   filter: ${({ isActive }) => (isActive ? "blur(3px)" : "")};
   overflow-y: ${({ isActive }) => (isActive ? "hidden" : "")};
-  transition: filter 0.3s ease;
   z-index: 149;
 `;
 
