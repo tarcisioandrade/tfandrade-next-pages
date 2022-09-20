@@ -9,6 +9,9 @@ export const Project = styled.div`
 
 export const Image = styled.div`
   position: relative;
+  span {
+    border-radius: ${({ theme }) => theme.borderRadiusXS};
+  }
 `;
 
 export const Content = styled.div`
@@ -22,7 +25,7 @@ export const Content = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #0e142892;
+  background-color: #0e1428ae;
 
   @media screen and (max-width: 425px) {
     opacity: 1;

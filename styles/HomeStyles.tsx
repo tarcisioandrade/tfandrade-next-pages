@@ -14,11 +14,15 @@ export const Avatar = styled.div`
   width: 150px;
   height: 150px;
   border-radius: 100%;
-  background: url("/assets/avatar.jpg") no-repeat center center;
-  background-size: cover;
   border: 3px solid ${({ theme }) => theme.green};
   margin-right: 56px;
-
+  overflow: hidden;
+  position: relative;
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  
   @media screen and (max-width: 425px) {
     margin-right: 0;
   }
@@ -88,7 +92,7 @@ export const ContainerTecs = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   max-width: 450px;
-  
+
   @media screen and (max-width: 425px) {
     display: flex;
     flex-wrap: wrap;

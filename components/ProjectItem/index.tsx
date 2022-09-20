@@ -1,41 +1,42 @@
 import Image from "next/image";
-import Link from "next/link";
+import type { Project } from "../../@types/sanity";
+import { urlFor } from "../../sanity";
 import { LinkOut } from "../Icons";
 import * as Styles from "./styles";
 
-const ProjectItem = () => {
+type Props = {
+  project: Project;
+};
+
+const ProjectItem = ({ project }: Props) => {
   return (
-    <Link href="/project-link" target="_blank">
-      <a>
-        <Styles.Project>
-          <Styles.Image>
-            <Image
-              src="/assets/project.png"
-              width={400}
-              height={270}
-              alt="Project Name"
-              objectFit="cover"
-            />
-          </Styles.Image>
-          <Styles.Content className="content">
-            <Styles.Wrapper>
-              <Styles.Icon>
-                <LinkOut />
-              </Styles.Icon>
-              <Styles.Name>Event Plataform</Styles.Name>
-              <Styles.Tags>
-                <Styles.Tag>React</Styles.Tag>
-                <Styles.Tag>Typescript</Styles.Tag>
-                <Styles.Tag>Graphql</Styles.Tag>
-                <Styles.Tag>GraphCMS</Styles.Tag>
-                <Styles.Tag>Apollo Client</Styles.Tag>
-                <Styles.Tag>Tailwind CSS</Styles.Tag>
-              </Styles.Tags>
-            </Styles.Wrapper>
-          </Styles.Content>
-        </Styles.Project>
-      </a>
-    </Link>
+    <a href={project.projectLink} target="_blank" rel="noreferrer">
+      <Styles.Project>
+        <Styles.Image>
+          <Image
+            src={urlFor(project.projectImage).url()}
+            width={400}
+            height={270}
+            alt={project.projectTitle}
+            objectFit="fill"
+            priority
+          />
+        </Styles.Image>
+        <Styles.Content className="content">
+          <Styles.Wrapper>
+            <Styles.Icon>
+              <LinkOut />
+            </Styles.Icon>
+            <Styles.Name>{project.projectTitle}</Styles.Name>
+            <Styles.Tags>
+              {project.tags.map((tag) => (
+                <Styles.Tag key={tag._id}>{tag.title}</Styles.Tag>
+              ))}
+            </Styles.Tags>
+          </Styles.Wrapper>
+        </Styles.Content>
+      </Styles.Project>
+    </a>
   );
 };
 

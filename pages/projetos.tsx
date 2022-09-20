@@ -1,9 +1,17 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
+import { Project } from "../@types/sanity";
 import ProjectItem from "../components/ProjectItem";
 import { MainContainer } from "../styles/Containers";
 import * as Styles from "../styles/ProjectStyles";
+import { fetchProjects } from "../utils/fetchProjects";
 
-const Projects = () => {
+type Props = {
+  projects: Project[];
+};
+
+const Projects = ({ projects }: Props) => {
+  console.log(projects);
   return (
     <MainContainer>
       <Head>
@@ -11,8 +19,8 @@ const Projects = () => {
       </Head>
       <Styles.TitleProject>Projetos</Styles.TitleProject>
       <Styles.ContainerProjects>
-        {["1", "2", "3"].map((item, i) => (
-          <ProjectItem key={i} />
+        {projects.map((project) => (
+          <ProjectItem key={project._id} project={project} />
         ))}
       </Styles.ContainerProjects>
     </MainContainer>
@@ -20,3 +28,13 @@ const Projects = () => {
 };
 
 export default Projects;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const projects: Project[] = await fetchProjects();
+  return {
+    props: {
+      projects,
+    },
+    revalidate: 10,
+  };
+};
