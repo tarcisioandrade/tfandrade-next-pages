@@ -18,7 +18,7 @@ const Projects = ({ projects }: Props) => {
       </Head>
       <Styles.TitleProject>Projetos</Styles.TitleProject>
       <Styles.ContainerProjects>
-        {projects.map((project) => (
+        {projects?.map((project) => (
           <ProjectItem key={project._id} project={project} />
         ))}
       </Styles.ContainerProjects>
