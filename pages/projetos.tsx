@@ -11,7 +11,6 @@ type Props = {
 };
 
 const Projects = ({ projects }: Props) => {
-  console.log(projects);
   return (
     <MainContainer>
       <Head>
@@ -31,6 +30,7 @@ export default Projects;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const projects: Project[] = await fetchProjects();
+  
   return {
     props: {
       projects,

@@ -13,8 +13,8 @@ export const Container = styled.div`
 `;
 
 export const BlurContainer = styled.div<Props>`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   filter: ${({ isActive }) => (isActive ? "blur(3px)" : "")};
   overflow-y: ${({ isActive }) => (isActive ? "hidden" : "")};
   z-index: 149;

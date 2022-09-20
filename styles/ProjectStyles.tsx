@@ -11,6 +11,7 @@ export const ContainerProjects = styled.div`
   gap: 48px;
   align-items: center;
   justify-content: center;
+  padding-bottom: 48px;
 
   a {
     width: fit-content;
