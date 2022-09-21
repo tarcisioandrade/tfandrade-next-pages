@@ -8,7 +8,7 @@ import Head from "next/head";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import { MainContainer } from "../styles/Containers";
-import { PageInfo, Skill, Social } from "../@types/sanity";
+import { PageInfo } from "../@types/sanity";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { urlFor } from "../sanity";
 import Image from "next/image";
@@ -18,8 +18,8 @@ type Props = {
 };
 
 const Home = ({ pageInfo }: Props) => {
-  const github = pageInfo?.socials.find((item) => item.title == "Github");
-  const linkedin = pageInfo?.socials.find((item) => item.title == "Linkedin");
+  const github = pageInfo.socials.find((item) => item.title == "Github");
+  const linkedin = pageInfo.socials.find((item) => item.title == "Linkedin");
 
   return (
     <MainContainer>
@@ -29,14 +29,14 @@ const Home = ({ pageInfo }: Props) => {
       <Styles.HeaderFlex>
         <Styles.Avatar>
           <Image
-            src={urlFor(pageInfo?.avatarImage).url()}
-            alt={pageInfo?.name}
+            src={urlFor(pageInfo.avatarImage).url()}
+            alt={pageInfo.name}
             layout="fill"
           />
         </Styles.Avatar>
         <div>
-          <Styles.Name>{pageInfo?.name}</Styles.Name>
-          <Styles.SubTitle>{pageInfo?.role}</Styles.SubTitle>
+          <Styles.Name>{pageInfo.name}</Styles.Name>
+          <Styles.SubTitle>{pageInfo.role}</Styles.SubTitle>
           <Styles.SocialIcons>
             <a href={github?.link as string} target="_blank" rel="noreferrer">
               <Icon.GithubIcon />
@@ -47,7 +47,7 @@ const Home = ({ pageInfo }: Props) => {
           </Styles.SocialIcons>
         </div>
       </Styles.HeaderFlex>
-      <Styles.Intro>{pageInfo?.intro}</Styles.Intro>
+      <Styles.Intro>{pageInfo.intro}</Styles.Intro>
       <ButtonLink href="" target="_blank">
         Download CV{" "}
         <DownloadSimple size={16} color="currentColor" weight="bold" />
@@ -56,7 +56,7 @@ const Home = ({ pageInfo }: Props) => {
       <Styles.TitleTec>Tecnologias e Conhecimentos</Styles.TitleTec>
 
       <Styles.ContainerTecs>
-        {pageInfo?.skills.map(({ image, slug, title, _id }) => (
+        {pageInfo.skills.map(({ image, slug, title, _id }) => (
           <Tippy content={slug} placement="bottom" theme="dark" arrow key={_id}>
             <div style={{ width: "fit-content" }}>
               <img src={urlFor(image).url()} alt={title} />
