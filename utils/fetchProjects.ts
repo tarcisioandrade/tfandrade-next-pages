@@ -6,12 +6,11 @@ const query = groq`
   *[_type == "projects"] {
     ...,
     tags[] ->
-  }
+  } | order(_updatedAt desc)
 `;
 
 export const fetchProjects = async () => {
-  const data = await sanityClient.fetch(query);
-  const projects: Project[] = data;
+  const projects: Project[] = await sanityClient.fetch(query);
 
   return projects;
 };

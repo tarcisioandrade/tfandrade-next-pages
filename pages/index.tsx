@@ -25,6 +25,7 @@ const Home = ({ pageInfo }: Props) => {
     <MainContainer>
       <Head>
         <title>Tarcisio | Porfólio</title>
+        
       </Head>
       <Styles.HeaderFlex>
         <Styles.Avatar>
