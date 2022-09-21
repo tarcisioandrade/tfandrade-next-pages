@@ -30,7 +30,7 @@ export default Projects;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const projects: Project[] = await fetchProjects();
-  
+
   return {
     props: {
       projects,
