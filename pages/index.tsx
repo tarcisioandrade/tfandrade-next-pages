@@ -32,6 +32,7 @@ const Home = ({ pageInfo }: Props) => {
             src={urlFor(pageInfo.avatarImage).url()}
             alt={pageInfo.name}
             layout="fill"
+            priority
           />
         </Styles.Avatar>
         <div>
