@@ -25,7 +25,6 @@ const Home = ({ pageInfo }: Props) => {
     <MainContainer>
       <Head>
         <title>Tarcisio | Porfólio</title>
-        
       </Head>
       <Styles.HeaderFlex>
         <Styles.Avatar>
@@ -39,10 +38,20 @@ const Home = ({ pageInfo }: Props) => {
           <Styles.Name>{pageInfo.name}</Styles.Name>
           <Styles.SubTitle>{pageInfo.role}</Styles.SubTitle>
           <Styles.SocialIcons>
-            <a href={github?.link as string} target="_blank" rel="noreferrer">
+            <a
+              href={github?.link as string}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={github?.title}
+            >
               <Icon.GithubIcon />
             </a>
-            <a href={linkedin?.link as string} target="_blank" rel="noreferrer">
+            <a
+              href={linkedin?.link as string}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={linkedin?.title}
+            >
               <Icon.LinkedinIcon />
             </a>
           </Styles.SocialIcons>
@@ -60,7 +69,12 @@ const Home = ({ pageInfo }: Props) => {
         {pageInfo.skills.map(({ image, slug, title, _id }) => (
           <Tippy content={slug} placement="bottom" theme="dark" arrow key={_id}>
             <div style={{ width: "fit-content" }}>
-              <img src={urlFor(image).url()} alt={title} />
+              <img
+                src={urlFor(image).url()}
+                alt={title}
+                width={100}
+                height={100}
+              />
             </div>
           </Tippy>
         ))}
