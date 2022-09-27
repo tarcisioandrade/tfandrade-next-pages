@@ -13,6 +13,8 @@ export default {
       name: "projectImage",
       title: "ProjectImage",
       type: "image",
+      description: "Resolution Preference 1029x625",
+
       options: {
         hotspot: true,
       },

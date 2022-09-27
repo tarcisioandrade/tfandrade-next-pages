@@ -42,11 +42,9 @@ const Contato = () => {
       </Head>
       <Styles.TitleContact>Contato</Styles.TitleContact>
 
-      {success && (
+      {success ? (
         <Styles.SuccessMensage>Mensagem Enviada!</Styles.SuccessMensage>
-      )}
-
-      {!success && (
+      ) : (
         <>
           <Styles.SubT>Envie sua mensagem</Styles.SubT>
           <Styles.FormContact onSubmit={handleSubmit}>

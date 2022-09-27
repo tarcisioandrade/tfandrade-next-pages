@@ -19,7 +19,7 @@ const MenuMobile = ({ isOpen, toggle }: Props) => {
 
   return (
     <MenuMobileContainer isOpen={isOpen} className="menuMobile">
-      <MenuMobileContent>
+      <MenuMobileContent id="menu-mobile" aria-expanded={isOpen} >
         <Link href="/">
           <a
             style={{
@@ -53,7 +53,7 @@ const MenuMobile = ({ isOpen, toggle }: Props) => {
           </a>
         </Link>
       </MenuMobileContent>
-      <MenuButton onClick={toggle}>
+      <MenuButton onClick={toggle} aria-controls="menu-mobile">
         {isOpen ? (
           <CaretLeft size={20} weight="bold" />
         ) : (

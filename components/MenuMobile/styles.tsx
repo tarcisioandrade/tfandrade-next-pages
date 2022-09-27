@@ -17,7 +17,7 @@ export const MenuMobileContainer = styled.div<Props>`
   }
 `;
 
-export const MenuMobileContent = styled.div`
+export const MenuMobileContent = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: center;

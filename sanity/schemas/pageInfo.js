@@ -21,6 +21,7 @@ export default {
     {
       name: "avatarImage",
       title: "Image",
+      description: "Resolution Preference 600x600",
       type: "image",
       options: {
         hotspot: true,
