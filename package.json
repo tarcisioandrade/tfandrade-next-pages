@@ -13,6 +13,7 @@
     "@sanity/image-url": "^1.0.1",
     "@tippyjs/react": "^4.2.6",
     "next": "12.3.0",
+    "next-i18next": "^12.0.1",
     "next-sanity": "^0.8.4",
     "nextjs-progressbar": "^0.0.14",
     "phosphor-react": "^1.4.1",

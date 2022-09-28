@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
@@ -16,6 +17,7 @@ type Props = {
 
 const MenuMobile = ({ isOpen, toggle }: Props) => {
   const { pathname } = useRouter();
+  const { t } = useTranslation("common");
 
   return (
     <MenuMobileContainer isOpen={isOpen} className="menuMobile">
@@ -28,7 +30,7 @@ const MenuMobile = ({ isOpen, toggle }: Props) => {
             onClick={toggle}
           >
             <House size={32} weight="fill" />
-            Home
+            {t("home")}
           </a>
         </Link>
         <Link href="/projetos">
@@ -39,7 +41,7 @@ const MenuMobile = ({ isOpen, toggle }: Props) => {
             onClick={toggle}
           >
             <Browsers size={32} weight="fill" />
-            Projetos
+            {t("projects")}
           </a>
         </Link>
 
@@ -49,7 +51,7 @@ const MenuMobile = ({ isOpen, toggle }: Props) => {
             onClick={toggle}
           >
             <EnvelopeSimple size={32} weight="fill" />
-            Contato
+            {t("contact")}
           </a>
         </Link>
       </MenuMobileContent>

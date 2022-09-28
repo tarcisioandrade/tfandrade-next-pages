@@ -12,6 +12,8 @@ import { PageInfo } from "../@types/sanity";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { urlFor } from "../sanity";
 import Image from "next/image";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 type Props = {
   pageInfo: PageInfo;
@@ -21,10 +23,14 @@ const Home = ({ pageInfo }: Props) => {
   const github = pageInfo.socials.find((item) => item.title == "Github");
   const linkedin = pageInfo.socials.find((item) => item.title == "Linkedin");
 
+  const { t } = useTranslation("common");
+
+  const title = `Tarcisio | ${t("homeTitle")}`;
+
   return (
     <MainContainer>
       <Head>
-        <title>Tarcisio | Porfólio</title>
+        <title>{title}</title>
       </Head>
       <Styles.HeaderFlex>
         <Styles.Avatar>
@@ -60,11 +66,11 @@ const Home = ({ pageInfo }: Props) => {
       </Styles.HeaderFlex>
       <Styles.Intro>{pageInfo.intro}</Styles.Intro>
       <ButtonLink href="" target="_blank">
-        Download CV{" "}
+        {t("buttonCV")}
         <DownloadSimple size={16} color="currentColor" weight="bold" />
       </ButtonLink>
 
-      <Styles.TitleTec>Tecnologias e Conhecimentos</Styles.TitleTec>
+      <Styles.TitleTec>{t("skillsTitle")}</Styles.TitleTec>
 
       <Styles.ContainerTecs>
         {pageInfo.skills.map(({ image, slug, title, _id }) => (
@@ -86,12 +92,13 @@ const Home = ({ pageInfo }: Props) => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
+export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
+  const pageInfo: PageInfo = await fetchPageInfo(locale);
 
   return {
     props: {
       pageInfo,
+      ...(await serverSideTranslations(locale as string, ["common"])),
     },
     revalidate: 10,
   };

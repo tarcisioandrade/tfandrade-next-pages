@@ -1,4 +1,6 @@
 import { GetStaticProps } from "next";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { Project } from "../@types/sanity";
 import ProjectItem from "../components/ProjectItem";
@@ -11,12 +13,16 @@ type Props = {
 };
 
 const Projects = ({ projects }: Props) => {
+  const { t } = useTranslation("common");
+
+  const title = `Tarcisio | ${t("projectsTitle")}`;
+
   return (
     <MainContainer>
       <Head>
-        <title>Tarcisio | Projetos</title>
+        <title>{title}</title>
       </Head>
-      <Styles.TitleProject>Projetos</Styles.TitleProject>
+      <Styles.TitleProject>{t("projectsTitle")}</Styles.TitleProject>
       <Styles.ContainerProjects>
         {projects?.map((project) => (
           <ProjectItem key={project._id} project={project} />
@@ -28,12 +34,13 @@ const Projects = ({ projects }: Props) => {
 
 export default Projects;
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const projects: Project[] = await fetchProjects();
 
   return {
     props: {
       projects,
+      ...(await serverSideTranslations(locale as string, ["common"])),
     },
     revalidate: 10,
   };
