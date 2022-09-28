@@ -1,3 +1,6 @@
+import { GetStaticProps } from "next";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { PaperPlaneRight } from "phosphor-react";
 import { FormEvent, useState } from "react";
@@ -12,6 +15,10 @@ const Contato = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  const { t } = useTranslation("common");
+
+  const title = `Tarcisio | ${t("contactTitle")}`;
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -38,18 +45,18 @@ const Contato = () => {
   return (
     <MainContainer>
       <Head>
-        <title>Tarcisio | Contato</title>
+        <title>{title}</title>
       </Head>
-      <Styles.TitleContact>Contato</Styles.TitleContact>
+      <Styles.TitleContact>{t("contactTitle")}</Styles.TitleContact>
 
       {success ? (
-        <Styles.SuccessMensage>Mensagem Enviada!</Styles.SuccessMensage>
+        <Styles.SuccessMensage>{t("form.messageSended")}</Styles.SuccessMensage>
       ) : (
         <>
-          <Styles.SubT>Envie sua mensagem</Styles.SubT>
+          <Styles.SubT> {t("contactSubTitle")}</Styles.SubT>
           <Styles.FormContact onSubmit={handleSubmit}>
             <Styles.Label>
-              Nome
+              {t("form.name")}
               <Styles.Input
                 type="text"
                 name="name"
@@ -58,7 +65,7 @@ const Contato = () => {
               />
             </Styles.Label>
             <Styles.Label>
-              E-mail
+              {t("form.email")}
               <Styles.Input
                 type="email"
                 name="email"
@@ -68,7 +75,7 @@ const Contato = () => {
             </Styles.Label>
 
             <Styles.Label>
-              Mensagem
+              {t("form.message")}
               <Styles.TextArea
                 name="message"
                 onChange={({ target }) => setMessage(target.value)}
@@ -77,7 +84,7 @@ const Contato = () => {
             </Styles.Label>
             {error && (
               <Styles.ErrorMensage>
-                Falha ao enviar mensagem. Por favor, tente novamente.
+                {t("form.messageError")}
               </Styles.ErrorMensage>
             )}
             {loading ? (
@@ -90,12 +97,12 @@ const Contato = () => {
                 }}
                 disabled={true}
               >
-                Enviando Mensagem{" "}
+                {t("form.buttonSending")}
                 <PaperPlaneRight size={16} color="currentColor" weight="bold" />
               </Button>
             ) : (
               <Button type="submit" style={{ marginTop: "36px" }}>
-                Enviar Mensagem{" "}
+                {t("form.button")}
                 <PaperPlaneRight size={16} color="currentColor" weight="bold" />
               </Button>
             )}
@@ -107,3 +114,11 @@ const Contato = () => {
 };
 
 export default Contato;
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale as string, ["common"])),
+    },
+  };
+};

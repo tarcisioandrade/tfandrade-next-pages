@@ -11,12 +11,12 @@ export default {
     {
       name: "role",
       title: "Role",
-      type: "string",
+      type: "localeString",
     },
     {
       name: "intro",
       title: "Intro",
-      type: "text",
+      type: "localeText",
     },
     {
       name: "avatarImage",

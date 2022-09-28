@@ -7,6 +7,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Container, BlurContainer } from "../styles/Containers";
 import NextNProgress from "nextjs-progressbar";
 import MenuMobile from "../components/MenuMobile";
+import { appWithTranslation } from "next-i18next";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,4 +45,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp) ;

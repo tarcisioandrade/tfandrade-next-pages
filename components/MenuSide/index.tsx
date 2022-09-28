@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { House, Browsers, EnvelopeSimple } from "phosphor-react";
@@ -5,6 +6,7 @@ import { FixedSide, SideIcons, SideNav } from "./styles";
 
 const MenuSide = () => {
   const { pathname } = useRouter();
+  const { t } = useTranslation("common");
 
   return (
     <FixedSide>
@@ -13,7 +15,7 @@ const MenuSide = () => {
           <Link href="/">
             <a style={{ color: pathname === "/" ? "#5F88E9" : "#DFE1E5" }}>
               <House size={32} weight="fill" />
-              Home
+              {t("home")}
             </a>
           </Link>
           <Link href="/projetos">
@@ -23,7 +25,7 @@ const MenuSide = () => {
               }}
             >
               <Browsers size={32} weight="fill" />
-              Projetos
+              {t("projects")}
             </a>
           </Link>
 
@@ -32,7 +34,7 @@ const MenuSide = () => {
               style={{ color: pathname === "/contato" ? "#5F88E9" : "#DFE1E5" }}
             >
               <EnvelopeSimple size={32} weight="fill" />
-              Contato
+              {t("contact")}
             </a>
           </Link>
         </SideIcons>
