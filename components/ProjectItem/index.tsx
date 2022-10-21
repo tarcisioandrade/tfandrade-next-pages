@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Project } from "../../@types/sanity";
+import type { Project } from "../../interfaces/sanity";
 import { urlFor } from "../../sanity";
 import { LinkOut } from "../Icons";
 import * as Styles from "./styles";

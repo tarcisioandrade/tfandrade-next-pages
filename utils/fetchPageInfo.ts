@@ -1,4 +1,4 @@
-import { PageInfo } from "../@types/sanity";
+import { PageInfo } from "../interfaces/sanity";
 import { groq } from "next-sanity";
 import { sanityClient } from "../sanity";
 

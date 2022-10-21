@@ -1,4 +1,4 @@
-import { Project } from "../@types/sanity";
+import { Project } from "../interfaces/sanity";
 import { groq } from "next-sanity";
 import { sanityClient } from "../sanity";
 
