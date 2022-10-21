@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
-import { Project } from "../@types/sanity";
+import { Project } from "../interfaces/sanity";
 import ProjectItem from "../components/ProjectItem";
 import { MainContainer } from "../styles/Containers";
 import * as Styles from "../styles/ProjectStyles";

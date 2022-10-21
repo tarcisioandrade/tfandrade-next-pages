@@ -8,7 +8,7 @@ import Head from "next/head";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import { MainContainer } from "../styles/Containers";
-import { PageInfo } from "../@types/sanity";
+import { PageInfo } from "../interfaces/sanity";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { urlFor } from "../sanity";
 import Image from "next/image";
@@ -26,7 +26,7 @@ const Home = ({ pageInfo }: Props) => {
   const { t } = useTranslation("common");
 
   const title = `Tarcisio | ${t("homeTitle")}`;
-
+  
   return (
     <MainContainer>
       <Head>

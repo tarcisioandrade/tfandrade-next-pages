@@ -37,6 +37,11 @@ export const Input = styled.input`
   color: ${({ theme }) => theme.whitePrimary};
   font-size: ${({ theme }) => theme.Dfont};
   border-radius: ${({ theme }) => theme.borderRadius};
+
+  &:hover,
+  &:focus {
+    border-color: ${({ theme }) => theme.green};
+  }
 `;
 
 export const TextArea = styled(Input).attrs({
