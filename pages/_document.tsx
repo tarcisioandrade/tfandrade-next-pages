@@ -61,6 +61,30 @@ export default class MyDocument extends Document {
             href="/favicon-16x16.png"
           />
           <link rel="manifest" href="/site.webmanifest" />
+
+          <meta name="title" content="Tarcisio | Portfólio" />
+          <meta name="description" content="Site de auto apresentação." />
+
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://tfandrade.netlify.app/" />
+          <meta property="og:title" content="Tarcisio | Portfólio" />
+          <meta
+            property="og:description"
+            content="Site de auto apresentação."
+          />
+          <meta property="og:image" content="/tfandrade-banner.png" />
+
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta
+            property="twitter:url"
+            content="https://tfandrade.netlify.app/"
+          />
+          <meta property="twitter:title" content="Tarcisio | Portfólio" />
+          <meta
+            property="twitter:description"
+            content="Site de auto apresentação."
+          />
+          <meta property="twitter:image" content="/tfandrade-banner.png" />
         </Head>
         <body>
           <Main />
