@@ -13,12 +13,17 @@ interface Image {
   };
 }
 
+interface Curriculum {
+  curriculum: string;
+}
+
 export interface PageInfo extends SanityBody {
   _type: "pageInfo";
   name: string;
   role: string;
   intro: string;
   avatarImage: Image;
+  curriculum: Curriculum;
   skills: Skill[];
   socials: Social[];
 }

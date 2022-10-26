@@ -22,11 +22,14 @@ type Props = {
 const Home = ({ pageInfo }: Props) => {
   const github = pageInfo.socials.find((item) => item.title == "Github");
   const linkedin = pageInfo.socials.find((item) => item.title == "Linkedin");
+  const cvFileURL = pageInfo.curriculum
 
   const { t } = useTranslation("common");
 
   const title = `Tarcisio | ${t("homeTitle")}`;
-  
+
+
+  console.log(pageInfo)
   return (
     <MainContainer>
       <Head>
@@ -65,7 +68,7 @@ const Home = ({ pageInfo }: Props) => {
         </div>
       </Styles.HeaderFlex>
       <Styles.Intro>{pageInfo.intro}</Styles.Intro>
-      <ButtonLink href="" target="_blank">
+      <ButtonLink href={`${cvFileURL}?dl=`} target="_blank">
         {t("buttonCV")}
         <DownloadSimple size={16} color="currentColor" weight="bold" />
       </ButtonLink>

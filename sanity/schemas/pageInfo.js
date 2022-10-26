@@ -28,6 +28,11 @@ export default {
       },
     },
     {
+      name: "cvFile",
+      title: "Curriculum",
+      type: "file"
+    },
+    {
       name: "socials",
       title: "Socials",
       type: "array",

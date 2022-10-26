@@ -9,7 +9,8 @@ export const fetchPageInfo = async (locale: string = "pt") => {
     "intro": intro.${locale},
     "role": role.${locale},
     skills[]->,
-    socials[] ->
+    socials[] ->,
+    "curriculum": curriculum.asset->url
   }
 `;
   const pageInfo: PageInfo = await sanityClient.fetch(query);
