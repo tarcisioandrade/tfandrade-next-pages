@@ -1,17 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
-import type { GetStaticProps } from "next";
-import * as Icon from "../components/Icons";
-import * as Styles from "../styles/HomeStyles";
-import { ButtonLink } from "../components/Button";
-import { DownloadSimple } from "phosphor-react";
 import Head from "next/head";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
+import * as Icon from "../components/Icons";
+import * as Styles from "../styles/HomeStyles";
+import Image from "next/image";
+import type { GetStaticProps } from "next";
+import { ButtonLink } from "../components/Button";
+import { DownloadSimple } from "phosphor-react";
 import { MainContainer } from "../styles/Containers";
 import { PageInfo } from "../interfaces/sanity";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { urlFor } from "../sanity";
-import Image from "next/image";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 

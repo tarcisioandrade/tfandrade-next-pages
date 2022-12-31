@@ -1,12 +1,12 @@
-import type { AppProps } from "next/app";
-import { ThemeProvider } from "styled-components";
 import theme from "../styles/theme/Theme";
-import { GlobalStyles } from "../styles/GlobalStyles";
 import MenuSide from "../components/MenuSide";
-import React, { useCallback, useEffect, useState } from "react";
-import { Container, BlurContainer } from "../styles/Containers";
 import NextNProgress from "nextjs-progressbar";
 import MenuMobile from "../components/MenuMobile";
+import type { AppProps } from "next/app";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "../styles/GlobalStyles";
+import { Container, BlurContainer } from "../styles/Containers";
+import { useCallback, useEffect, useState } from "react";
 import { appWithTranslation } from "next-i18next";
 
 function MyApp({ Component, pageProps }: AppProps) {

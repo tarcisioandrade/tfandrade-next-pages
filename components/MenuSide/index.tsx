@@ -1,5 +1,5 @@
-import { useTranslation } from "next-i18next";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { House, Browsers, EnvelopeSimple } from "phosphor-react";
 import { FixedSide, SideIcons, SideNav } from "./styles";

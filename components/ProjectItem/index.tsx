@@ -1,8 +1,8 @@
 import Image from "next/image";
+import * as Styles from "./styles";
 import type { Project } from "../../interfaces/sanity";
 import { urlFor } from "../../sanity";
 import { LinkOut } from "../Icons";
-import * as Styles from "./styles";
 
 type Props = {
   project: Project;

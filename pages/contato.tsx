@@ -1,11 +1,11 @@
+import Head from "next/head";
+import * as Styles from "../styles/ContactStyles";
 import { GetStaticProps } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Head from "next/head";
 import { PaperPlaneRight } from "phosphor-react";
 import { FormEvent, useState } from "react";
 import { Button } from "../components/Button";
-import * as Styles from "../styles/ContactStyles";
 import { MainContainer } from "../styles/Containers";
 
 const Contato = () => {
