@@ -49,6 +49,7 @@ export interface Social extends SanityBody {
 export interface Project extends SanityBody {
   _type: "projects";
   projectLink: string;
+  projectGithubLink: string;
   projectTitle: string;
   projectImage: Image;
   tags: Tag[];

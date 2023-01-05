@@ -22,14 +22,12 @@ type Props = {
 const Home = ({ pageInfo }: Props) => {
   const github = pageInfo.socials.find((item) => item.title == "Github");
   const linkedin = pageInfo.socials.find((item) => item.title == "Linkedin");
-  const cvFileURL = pageInfo.curriculum
+  const cvFileURL = pageInfo.curriculum;
 
   const { t } = useTranslation("common");
 
   const title = `Tarcisio | ${t("homeTitle")}`;
 
-
-  console.log(pageInfo)
   return (
     <MainContainer>
       <Head>

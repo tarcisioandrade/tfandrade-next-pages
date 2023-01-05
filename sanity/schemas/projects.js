@@ -25,6 +25,11 @@ export default {
       type: "url",
     },
     {
+      name: "projectGithubLink",
+      title: "GithubLink",
+      type: "url",
+    },
+    {
       name: "tags",
       title: "Tags",
       type: "array",

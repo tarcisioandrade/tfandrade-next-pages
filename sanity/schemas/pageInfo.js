@@ -28,7 +28,7 @@ export default {
       },
     },
     {
-      name: "cvFile",
+      name: "curriculum",
       title: "Curriculum",
       type: "file"
     },

@@ -33,9 +33,18 @@ export const Content = styled.div`
 `;
 
 export const Icon = styled.div`
+  display: flex;
+  gap: 16px;
+  width: fit-content;
   position: absolute;
   top: 24px;
   right: 24px;
+
+  & a {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
 `;
 
 export const Wrapper = styled.div`

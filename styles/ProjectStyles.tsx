@@ -18,7 +18,7 @@ export const ContainerProjects = styled.div`
     display: block;
   }
 
-  a:hover .content {
+  .project-item:hover .content {
     opacity: 1;
   }
 
