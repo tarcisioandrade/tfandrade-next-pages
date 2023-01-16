@@ -9,8 +9,10 @@ export const Project = styled.div`
 
 export const Image = styled.div`
   position: relative;
-  span {
-    border-radius: ${({ theme }) => theme.borderRadiusXS};
+  img {
+    display: block;
+    width: 400px;
+    height: 270px;
   }
 `;
 

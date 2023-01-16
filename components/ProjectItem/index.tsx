@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import * as Styles from "./styles";
 import type { Project } from "../../interfaces/sanity";
@@ -29,25 +30,21 @@ const ProjectItem = ({ project }: Props) => {
   return (
     <Styles.Project className="project-item">
       <Styles.Image>
-        <Image
+        <img
           src={urlFor(project.projectImage).url()}
-          width={400}
-          height={270}
           alt={project.projectTitle}
-          objectFit="fill"
-          priority
         />
       </Styles.Image>
       <Styles.Content className="content">
         <Styles.Wrapper>
           <Styles.Icon>
             <Link href={project.projectGithubLink}>
-              <a target="_blank" title={project.projectTitle}>
+              <a target="_blank" title="Github Link">
                 <GithubIcon />
               </a>
             </Link>
             <Link href={project.projectLink}>
-              <a target="_blank" title={project.projectTitle}>
+              <a target="_blank" title="Website Link">
                 <LinkOut />
               </a>
             </Link>
