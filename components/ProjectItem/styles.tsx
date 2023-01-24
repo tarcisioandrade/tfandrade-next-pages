@@ -11,8 +11,8 @@ export const Image = styled.div`
   position: relative;
   img {
     display: block;
-    width: 400px;
-    height: 270px;
+    max-width: 100%;
+    max-height: 100%;
   }
 `;
 
@@ -46,6 +46,17 @@ export const Icon = styled.div`
     display: block;
     width: 24px;
     height: 24px;
+  }
+
+  @media screen and (max-width: 425px) {
+    gap: 4px;
+    top: 14px;
+    right: 14px;
+
+    & a svg {
+      width: 18px;
+      height: 18px;
+    }
   }
 `;
 

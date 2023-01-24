@@ -9,7 +9,6 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 24px;
   position: relative;
-  height: 100vh;
 `;
 
 export const BlurContainer = styled.div<Props>`
