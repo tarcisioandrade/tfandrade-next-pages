@@ -35,12 +35,7 @@ const Home = ({ pageInfo }: Props) => {
       </Head>
       <Styles.HeaderFlex>
         <Styles.Avatar>
-          <Image
-            src={urlFor(pageInfo.avatarImage).url()}
-            alt={pageInfo.name}
-            layout="fill"
-            priority
-          />
+          <img src={urlFor(pageInfo.avatarImage).url()} alt={pageInfo.name} />
         </Styles.Avatar>
         <div>
           <Styles.Name>{pageInfo.name}</Styles.Name>
