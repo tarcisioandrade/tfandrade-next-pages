@@ -14,7 +14,6 @@ type Props = {
 
 const Projects = ({ projects }: Props) => {
   const { t } = useTranslation("common");
-
   const title = `Tarcisio | ${t("projectsTitle")}`;
 
   return (

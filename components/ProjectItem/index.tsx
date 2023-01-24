@@ -27,13 +27,14 @@ const GithubIcon = () => {
 };
 
 const ProjectItem = ({ project }: Props) => {
+  const urlOptimized =
+    "https://8bymgq7k.cdn.imgeng.in/" +
+    urlFor(project.projectImage).url().split("https://cdn.sanity.io/")[1];
+
   return (
     <Styles.Project className="project-item">
       <Styles.Image>
-        <img
-          src={urlFor(project.projectImage).url()}
-          alt={project.projectTitle}
-        />
+        <img src={urlOptimized} alt={project.projectTitle} />
       </Styles.Image>
       <Styles.Content className="content">
         <Styles.Wrapper>
