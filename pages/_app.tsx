@@ -8,19 +8,28 @@ import { GlobalStyles } from "../styles/GlobalStyles";
 import { Container, BlurContainer } from "../styles/Containers";
 import { useCallback, useEffect, useState } from "react";
 import { appWithTranslation } from "next-i18next";
+import dynamic from "next/dynamic";
+const DynamicMenuMobile = dynamic(() => import("../components/MenuMobile"));
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleMenu = useCallback(() => setIsMenuOpen(!isMenuOpen),[isMenuOpen]);
+  const handleMenu = useCallback(
+    () => setIsMenuOpen(!isMenuOpen),
+    [isMenuOpen]
+  );
 
   useEffect(() => {
     const outSideClick = (e: any) => {
-      if (e.target.closest(".blur") && !e.target.closest(".menuMobile") && isMenuOpen) {
+      if (
+        e.target.closest(".blur") &&
+        !e.target.closest(".menuMobile") &&
+        isMenuOpen
+      ) {
         handleMenu();
       }
     };
     document.addEventListener("click", outSideClick);
+
     return () => document.removeEventListener("click", outSideClick);
   }, [handleMenu, isMenuOpen]);
 
@@ -34,15 +43,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         showOnShallow={true}
       />
       <GlobalStyles />
-      <MenuMobile isOpen={isMenuOpen} toggle={handleMenu} />
+      <DynamicMenuMobile isOpen={isMenuOpen} toggle={handleMenu} />
       <BlurContainer isActive={isMenuOpen} className="blur">
         <Container>
           <MenuSide />
-            <Component {...pageProps} />
+          <Component {...pageProps} />
         </Container>
       </BlurContainer>
     </ThemeProvider>
   );
 }
 
-export default appWithTranslation(MyApp) ;
+export default appWithTranslation(MyApp);
