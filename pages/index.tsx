@@ -4,7 +4,6 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import * as Icon from "../components/Icons";
 import * as Styles from "../styles/HomeStyles";
-import Image from "next/image";
 import type { GetStaticProps } from "next";
 import { ButtonLink } from "../components/Button";
 import { DownloadSimple } from "phosphor-react";
@@ -14,6 +13,7 @@ import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { urlFor } from "../sanity";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 
 type Props = {
   pageInfo: PageInfo;
@@ -72,7 +72,7 @@ const Home = ({ pageInfo }: Props) => {
         {pageInfo.skills.map(({ image, slug, title, _id }) => (
           <Tippy content={slug} placement="bottom" theme="dark" arrow key={_id}>
             <div style={{ width: "fit-content" }}>
-              <img
+              <Image
                 src={urlFor(image).url()}
                 alt={title}
                 width={80}
@@ -96,6 +96,6 @@ export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
       pageInfo,
       ...(await serverSideTranslations(locale as string, ["common"])),
     },
-    revalidate: 10,
+    revalidate: 60,
   };
 };
