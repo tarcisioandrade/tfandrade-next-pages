@@ -1,7 +1,5 @@
 import theme from "../styles/theme/Theme";
 import MenuSide from "../components/MenuSide";
-import NextNProgress from "nextjs-progressbar";
-import MenuMobile from "../components/MenuMobile";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "../styles/GlobalStyles";
@@ -9,6 +7,8 @@ import { Container, BlurContainer } from "../styles/Containers";
 import { useCallback, useEffect, useState } from "react";
 import { appWithTranslation } from "next-i18next";
 import dynamic from "next/dynamic";
+import NextNProgress from "nextjs-progressbar";
+
 const DynamicMenuMobile = dynamic(() => import("../components/MenuMobile"));
 
 function MyApp({ Component, pageProps }: AppProps) {
