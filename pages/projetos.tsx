@@ -1,5 +1,4 @@
 import Head from "next/head";
-import ProjectItem from "../components/ProjectItem";
 import * as Styles from "../styles/ProjectStyles";
 import { GetStaticProps } from "next";
 import { useTranslation } from "next-i18next";
@@ -8,9 +7,8 @@ import { Project } from "../interfaces/sanity";
 import { MainContainer } from "../styles/Containers";
 import { fetchProjects } from "../utils/fetchProjects";
 import dynamic from "next/dynamic";
-const DynamicProjectItem = dynamic(() => import("../components/ProjectItem"), {
-  loading: () => <p style={{ color: "red" }}>Loading...</p>,
-});
+
+const DynamicProjectItem = dynamic(() => import("../components/ProjectItem"));
 
 type Props = {
   projects: Project[];

@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import * as Styles from "./styles";
 import type { Project } from "../../interfaces/sanity";
 import { urlFor } from "../../sanity";
