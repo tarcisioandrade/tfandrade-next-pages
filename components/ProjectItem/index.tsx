@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from "next/image";
 import * as Styles from "./styles";
 import type { Project } from "../../interfaces/sanity";
 import { urlFor } from "../../sanity";
 import { LinkOut } from "../Icons";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   project: Project;
@@ -34,20 +34,30 @@ const ProjectItem = ({ project }: Props) => {
   return (
     <Styles.Project className="project-item">
       <Styles.Image>
-        <img src={urlOptimized} alt={project.projectTitle} />
+        {/* <img src={urlOptimized} alt={project.projectTitle} /> */}
+        <Image
+          src={urlOptimized}
+          alt={project.projectTitle}
+          width={400}
+          height={250}
+        />
       </Styles.Image>
       <Styles.Content className="content">
         <Styles.Wrapper>
           <Styles.Icon>
-            <Link href={project.projectGithubLink}>
-              <a target="_blank" title="Github Link">
-                <GithubIcon />
-              </a>
+            <Link
+              href={project.projectGithubLink}
+              target="_blank"
+              title="Github Link"
+            >
+              <GithubIcon />
             </Link>
-            <Link href={project.projectLink}>
-              <a target="_blank" title="Website Link">
-                <LinkOut />
-              </a>
+            <Link
+              href={project.projectLink}
+              target="_blank"
+              title="Website Link"
+            >
+              <LinkOut />
             </Link>
           </Styles.Icon>
           <Styles.Name>{project.projectTitle}</Styles.Name>
