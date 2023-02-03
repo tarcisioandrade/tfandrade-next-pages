@@ -35,14 +35,13 @@ const Projects = ({ projects }: Props) => {
 
 export default Projects;
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const projects: Project[] = await fetchProjects();
+export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
+  const projects = await fetchProjects();
 
   return {
     props: {
       projects,
       ...(await serverSideTranslations(locale as string, ["common"])),
     },
-    revalidate: 60,
   };
 };
