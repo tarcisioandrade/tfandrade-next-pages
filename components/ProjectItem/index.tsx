@@ -33,12 +33,12 @@ const ProjectItem = ({ project }: Props) => {
   return (
     <Styles.Project className="project-item">
       <Styles.Image>
-        {/* <img src={urlOptimized} alt={project.projectTitle} /> */}
         <Image
-          src={urlOptimized}
+          src="https://res.cloudinary.com/drdzrfm15/image/upload/v1672338958/company_avatar/oxbyg9gk3qyveob3fuee.jpg"
           alt={project.projectTitle}
           width={400}
           height={250}
+          priority
         />
       </Styles.Image>
       <Styles.Content className="content">

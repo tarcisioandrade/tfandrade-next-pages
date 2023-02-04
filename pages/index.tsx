@@ -77,6 +77,7 @@ const Home = ({ pageInfo }: Props) => {
                 alt={title}
                 width={80}
                 height={80}
+                priority
               />
             </div>
           </Tippy>

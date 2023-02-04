@@ -8,7 +8,7 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ["cdn.sanity.io", "8bymgq7k.cdn.imgeng.in"],
+    domains: ["cdn.sanity.io", "8bymgq7k.cdn.imgeng.in", "res.cloudinary.com"],
   },
   i18n,
 };
