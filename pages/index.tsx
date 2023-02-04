@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
@@ -35,7 +34,13 @@ const Home = ({ pageInfo }: Props) => {
       </Head>
       <Styles.HeaderFlex>
         <Styles.Avatar>
-          <img src={urlFor(pageInfo.avatarImage).url()} alt={pageInfo.name} />
+          <Image
+            src={urlFor(pageInfo.avatarImage).url()}
+            alt={pageInfo.name}
+            width={150}
+            height={150}
+            priority
+          />
         </Styles.Avatar>
         <div>
           <Styles.Name>{pageInfo.name}</Styles.Name>
@@ -90,7 +95,7 @@ const Home = ({ pageInfo }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
-  const pageInfo: PageInfo = await fetchPageInfo(locale);
+  const pageInfo = await fetchPageInfo(locale);
 
   return {
     props: {

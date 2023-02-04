@@ -34,7 +34,7 @@ const ProjectItem = ({ project }: Props) => {
     <Styles.Project className="project-item">
       <Styles.Image>
         <Image
-          src="https://res.cloudinary.com/drdzrfm15/image/upload/v1672338958/company_avatar/oxbyg9gk3qyveob3fuee.jpg"
+          src={urlOptimized}
           alt={project.projectTitle}
           width={400}
           height={250}

@@ -9,10 +9,8 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     color: ${({ theme }) => theme.whitePrimary} ;
-    background: ${({ theme }) => theme.blackBlue} ;
+    background-image: linear-gradient(180deg,#292d4a 3%,#101230 83%);
     font-family: 'Inter', sans-serif;
-    background-image: url("/assets/bg.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
   }
