@@ -13,5 +13,9 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Inter', sans-serif;
     background-size: cover;
     background-attachment: fixed;
+
+    @media screen and (max-width: 768px) {
+      background-attachment: scroll;
+  }
   }
 `;

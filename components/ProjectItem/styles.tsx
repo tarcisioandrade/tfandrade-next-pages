@@ -5,6 +5,7 @@ export const Project = styled.div`
   width: fit-content;
   border-radius: ${({ theme }) => theme.borderRadiusXS};
   overflow: hidden;
+  background-color: ${({ theme }) => theme.blackBlue};
 `;
 
 export const Image = styled.div`
