@@ -42,7 +42,6 @@ export const Icon = styled.div`
   position: absolute;
   top: 24px;
   right: 24px;
-
   & a {
     display: block;
     width: 24px;
@@ -50,13 +49,13 @@ export const Icon = styled.div`
   }
 
   @media screen and (max-width: 425px) {
-    gap: 4px;
+    gap: 22px;
     top: 14px;
     right: 14px;
 
     & a svg {
-      width: 18px;
-      height: 18px;
+      width: 22px;
+      height: 22px;
     }
   }
 `;
