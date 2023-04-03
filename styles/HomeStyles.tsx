@@ -21,6 +21,7 @@ export const Avatar = styled.div`
   img {
     display: block;
     max-width: 100%;
+    object-fit: cover;
   }
   
   @media screen and (max-width: 425px) {
