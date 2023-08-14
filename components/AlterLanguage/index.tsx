@@ -30,8 +30,8 @@ const AlterLanguage = () => {
             </S.LanguageItem>
           )}
         </S.ModalLanguange>
-        <S.BLanguageContainer>
-          <Globe size={24} onClick={handleModal} />
+        <S.BLanguageContainer onClick={handleModal}>
+          <Globe size={24} />
         </S.BLanguageContainer>
       </S.BWrapper>
     </OutsideClickHandler>
