@@ -9,6 +9,7 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 24px;
   position: relative;
+  min-height: calc(100vh + 1px);
 `;
 
 export const BlurContainer = styled.div<Props>`
@@ -23,7 +24,6 @@ export const MainContainer = styled.main`
   transform: translateX(-30px);
   opacity: 0;
   animation: animeContainer 0.3s forwards;
-
   @keyframes animeContainer {
     to {
       transform: translateX(0px);

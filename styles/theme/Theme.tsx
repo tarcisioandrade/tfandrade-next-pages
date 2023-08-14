@@ -6,6 +6,9 @@ const theme = {
   whitePrimary: "#FBFCFF",
   whiteSecondary: "#CCD2E4",
 
+  slate800: "#1e293b",
+  slate700: "#334155",
+  
   // Fonts Size
   // Desktop
   DfontXs: "33.18px",

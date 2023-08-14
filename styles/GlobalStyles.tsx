@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     color: ${({ theme }) => theme.whitePrimary} ;
-    background-image: linear-gradient(180deg,#292d4a 3%,#101230 83%);
+    background-image: linear-gradient(180deg,#111a2e 3%,#0f172a 83%);
     font-family: 'Inter', sans-serif;
     background-size: cover;
     background-attachment: fixed;

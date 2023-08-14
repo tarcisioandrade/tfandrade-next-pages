@@ -8,6 +8,7 @@ import { useCallback, useEffect, useState } from "react";
 import { appWithTranslation } from "next-i18next";
 import dynamic from "next/dynamic";
 import NextNProgress from "nextjs-progressbar";
+import AlterLanguange from "../components/AlterLanguage";
 
 const DynamicMenuMobile = dynamic(() => import("../components/MenuMobile"));
 
@@ -48,6 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Container>
           <MenuSide />
           <Component {...pageProps} />
+          <AlterLanguange />
         </Container>
       </BlurContainer>
     </ThemeProvider>
