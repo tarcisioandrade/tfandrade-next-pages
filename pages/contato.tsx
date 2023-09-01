@@ -98,12 +98,12 @@ const Contato = () => {
                 disabled={true}
               >
                 {t("form.buttonSending")}
-                <PaperPlaneRight size={16} color="currentColor" weight="bold" />
+                <PaperPlaneRight size={24} color="currentColor" weight="bold" />
               </Button>
             ) : (
               <Button type="submit" style={{ marginTop: "36px" }}>
                 {t("form.button")}
-                <PaperPlaneRight size={16} color="currentColor" weight="bold" />
+                <PaperPlaneRight size={24} color="currentColor" weight="bold" />
               </Button>
             )}
           </Styles.FormContact>

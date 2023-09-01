@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { TitleTec } from "./HomeStyles";
+import { TitleSec } from "./HomeStyles";
 
-export const TitleContact = styled(TitleTec)`
+export const TitleContact = styled(TitleSec)`
   margin: 0 0 36px 0;
 `;
 

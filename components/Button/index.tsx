@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   background-color: ${({ theme }) => theme.green};
   color: ${({ theme }) => theme.whitePrimary};
   padding: 16px 23px;
@@ -13,15 +17,13 @@ export const Button = styled.button`
   &:hover {
     opacity: 0.8;
   }
-
-  svg {
-    margin-left: 8px;
-    vertical-align: middle;
-  }
 `;
 
 export const ButtonLink = styled.a`
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   width: fit-content;
   background-color: ${({ theme }) => theme.green};
   color: ${({ theme }) => theme.whitePrimary};
@@ -35,10 +37,6 @@ export const ButtonLink = styled.a`
 
   &:hover {
     opacity: 0.8;
-  }
-
-  svg {
-    margin-left: 8px;
   }
 
   @media screen and (max-width: 425px) {

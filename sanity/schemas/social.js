@@ -13,7 +13,7 @@ export default {
       name: "link",
       title: "Link",
       description: "Link of social",
-      type: "url",
+      type: "string",
     },
   ],
 };

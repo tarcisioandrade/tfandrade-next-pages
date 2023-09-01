@@ -23,7 +23,7 @@ export const Avatar = styled.div`
     max-width: 100%;
     object-fit: cover;
   }
-  
+
   @media screen and (max-width: 425px) {
     margin-right: 0;
   }
@@ -71,13 +71,9 @@ export const Intro = styled.p`
   font-size: ${({ theme }) => theme.Dfont};
   margin: 34px 0;
   max-width: 650px;
-
-  @media screen and (max-width: 425px) {
-    text-align: center;
-  }
 `;
 
-export const TitleTec = styled.div`
+export const TitleSec = styled.div`
   color: ${({ theme }) => theme.whitePrimary};
   font-size: ${({ theme }) => theme.DfontLs};
   margin: 50px 0;
@@ -88,7 +84,7 @@ export const TitleTec = styled.div`
   }
 `;
 
-export const ContainerTecs = styled.div`
+export const ContainerTecs = styled.section`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
@@ -97,7 +93,17 @@ export const ContainerTecs = styled.div`
   @media screen and (max-width: 425px) {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 25px;
     padding-bottom: 3rem;
+  }
+`;
+
+export const Tec = styled.div`
+  @media screen and (max-width: 425px) {
+    & img {
+      width: 64px;
+      height: 64px;
+    }
   }
 `;
