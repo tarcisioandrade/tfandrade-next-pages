@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { TitleTec } from "../styles/HomeStyles";
+import { TitleSec } from "../styles/HomeStyles";
 
-export const TitleProject = styled(TitleTec)`
+export const TitleProject = styled(TitleSec)`
   margin: 0 0 36px 0;
 `;
 
