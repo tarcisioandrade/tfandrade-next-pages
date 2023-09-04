@@ -36,7 +36,7 @@ const Home = ({ pageInfo }: Props) => {
       <Styles.HeaderFlex>
         <Styles.Avatar>
           <Image
-            src={urlFor(pageInfo.avatarImage).url()}
+            src={urlFor(pageInfo.avatarImage).format("webp").url()}
             alt={pageInfo.name}
             width={150}
             height={150}
@@ -92,7 +92,6 @@ const Home = ({ pageInfo }: Props) => {
                 alt={title}
                 width={80}
                 height={80}
-                priority
               />
             </Styles.Tec>
           </Tippy>
